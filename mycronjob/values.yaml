@@ -1,0 +1,6 @@
+schedule: "*/1 * * * *"
+
+image: artifactory.datapwn.com/tlnd-docker-dev/talend/sandbox/hello-python:0.0.1
+
+imagePullSecrets:
+ - name: talend-registry

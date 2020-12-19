@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+  - image: artifactory.datapwn.com/tlnd-docker-dev/talend/sandbox/hello-python
+deploy:
+  helm:
+    releases:
+    - name: skaffold-mycronjob
+      chartPath: mycronjob
+      artifactOverrides:
+        image: artifactory.datapwn.com/tlnd-docker-dev/talend/sandbox/hello-python
